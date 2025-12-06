@@ -1,0 +1,23 @@
+{
+    "version": "2.0",
+    "logging": {
+        "logLevel": {
+            "default": "Information",
+            "Host.Results": "Information",
+            "Function": "Information",
+            "Host.Aggregator": "Warning",
+            "Microsoft": "Warning"
+        },
+        "applicationInsights": {
+            "samplingSettings": {
+                "isEnabled": true,
+                "excludedTypes": "Request"
+            },
+            "enableLiveMetricsFilters": true
+        },
+        "console": {
+            "isEnabled": true,
+            "disableColors": false
+        }
+    }
+}

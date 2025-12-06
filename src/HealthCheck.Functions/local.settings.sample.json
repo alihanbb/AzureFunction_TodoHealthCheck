@@ -1,0 +1,13 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "HealthCheck:ServiceUrls": "http://localhost:5000/health;http://localhost:5000/health/ready",
+        "Email:SmtpHost": "smtp.gmail.com",
+        "Email:SmtpPort": "587",
+        "Email:SmtpUsername": "alihancelik7140@gmail.com",
+        "Email:SmtpPassword": "dpsjzowpsyrznaro",
+        "Email:NotificationEmail": "alihancelik7140@gmail.com"
+    }
+}
