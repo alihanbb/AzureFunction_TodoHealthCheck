@@ -1,6 +1,4 @@
-version: '3.8'
-
-services:
+﻿services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver
@@ -26,8 +24,8 @@ services:
     image: datalust/seq:2024.3
     container_name: seq
     ports:
-      - "5346:5341" # Ingestion API
-      - "8082:80" # Web UI
+      - "5346:5341"
+      - "8082:80"
     environment:
       - ACCEPT_EULA=Y
     volumes:
@@ -36,6 +34,20 @@ services:
       - todoapp-network
     restart: unless-stopped
 
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: azurite
+    hostname: azurite
+    restart: unless-stopped
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    volumes:
+      - azurite-data:/data
+    networks:
+      - todoapp-network
+
 networks:
   todoapp-network:
     driver: bridge
@@ -43,3 +55,4 @@ networks:
 volumes:
   sqlserver-data:
   seq-data:
+  azurite-data:
